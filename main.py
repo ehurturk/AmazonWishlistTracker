@@ -13,11 +13,8 @@ print('------------------------------------')
 
 MAIL = YOUR EMAIL
 PASSWRD = YOUR EMAIL PSSWD
-# + OBJECT ID!!!!!
-sheety_end = SHEETY ENDPOINT
-sheety_usr = YOUR API CREDENTIAL
-sheety_psw = YOUR API CREDENTIAL
 amazon_wishlist_url = AMAZON WISHLIST URL (NEEDS TO BE PUBLIC)
+
 def send_mail(topic, body):
     text_type = 'plain'
     text=body
@@ -30,19 +27,6 @@ def send_mail(topic, body):
         connection.starttls()
         connection.login(MAIL, PASSWRD)
         connection.sendmail(MAIL, recipients, msg.as_string())
-
-def update_sheets(data, i):
-        data_ = {
-            'wishlist': {
-                'productName': data['title'],
-                'newPrice': data['new_price'],
-                'oldPrice': data['old_price'],
-                'percentage': data['percentage']
-            }
-        }
-        url = f'{sheety_end}{i+2}'
-        response = requests.put(url, json=data_, auth=(sheety_usr, sheety_psw))
-        print(response.text)
 
 
 headers = {
@@ -83,7 +67,6 @@ for i in range(0, len(product_prices)):
     }
     
         
-    #update_sheets(post_data, i)
 
     if post_data['percentage'] >= threshold_percentage:
         mail_body += f"•{post_data['title']}'s price has been dropped by %{post_data['percentage']}!\n\n"
