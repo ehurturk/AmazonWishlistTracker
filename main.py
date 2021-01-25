@@ -14,10 +14,10 @@ print('------------------------------------')
 MAIL = YOUR EMAIL
 PASSWRD = YOUR EMAIL PSSWD
 # + OBJECT ID!!!!!
-sheety_end = 'https://api.sheety.co/607a2b46e1bbc02f99e9984d6e00de56/amazonTracker/wishlists/'
+sheety_end = SHEETY ENDPOINT
 sheety_usr = YOUR API CREDENTIAL
 sheety_psw = YOUR API CREDENTIAL
-amazon_wishlist_url = 'https://www.amazon.com/hz/wishlist/ls/3C4XRYO67CMG6/ref=nav_wishlist_lists_1?_encoding=UTF8&type=wishlist'
+amazon_wishlist_url = AMAZON WISHLIST URL (NEEDS TO BE PUBLIC)
 def send_mail(topic, body):
     text_type = 'plain'
     text=body
