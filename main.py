@@ -78,9 +78,5 @@ for i in range(0, len(product_prices)):
         json.dump(ppost_data, json_p)
     
     
-
-
-
 if counter >=1:
-    mail_body += f"\n\nSheets URL: SHEETS URL'
     send_mail(topic='Wishlist!', body=mail_body)
