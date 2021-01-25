@@ -11,21 +11,21 @@ print('----------------------------')
 print('Please be sure that every item has a price in your wishlist.')
 print('------------------------------------')
 
-MAIL = 'obiwankenobisw84@gmail.com'
-PASSWRD = 'obiwanobiwan'
+MAIL = YOUR EMAIL
+PASSWRD = YOUR EMAIL PSSWD
 # + OBJECT ID!!!!!
 sheety_end = 'https://api.sheety.co/607a2b46e1bbc02f99e9984d6e00de56/amazonTracker/wishlists/'
-sheety_usr = 'ehurturk'
-sheety_psw = 'deneme12*'
+sheety_usr = YOUR API CREDENTIAL
+sheety_psw = YOUR API CREDENTIAL
 amazon_wishlist_url = 'https://www.amazon.com/hz/wishlist/ls/3C4XRYO67CMG6/ref=nav_wishlist_lists_1?_encoding=UTF8&type=wishlist'
 def send_mail(topic, body):
     text_type = 'plain'
     text=body
-    recipients = ['emirhurturk444@gmail.com']
+    recipients = [YOUR RECIPIENTS]
     msg = MIMEText(text, text_type, 'utf-8')
     msg['Subject'] = topic
     msg['To'] = ', '.join(recipients)
-    msg['From'] = 'obiwankenobisw84@gmail.com'
+    msg['From'] = YOUR EMAIL ACCOUNT
     with SMTP(host='smtp.gmail.com', port=587) as connection:
         connection.starttls()
         connection.login(MAIL, PASSWRD)
@@ -46,8 +46,7 @@ def update_sheets(data, i):
 
 
 headers = {
-    'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.141 Safari/537.36',
-    'Accept-Language': 'en,en-US;q=0.9,tr-TR;q=0.8,tr;q=0.7'
+    'User-Agent': YOUR USER AGENT 
 }
 
 threshold_percentage = 2#float(input('Please enter the minimum change percentage in order to be notified:\n'))
@@ -100,5 +99,5 @@ for i in range(0, len(product_prices)):
 
 
 if counter >=1:
-    mail_body += f"\n\nSheets URL: https://docs.google.com/spreadsheets/d/1f4I96ZiwxGEXeMFfacXgyuqLX0MpjWtm_1ZHZV6RmHU/edit?usp=sharing"
-    #send_mail(topic='Wishlist!', body=mail_body)
+    mail_body += f"\n\nSheets URL: SHEETS URL'
+    send_mail(topic='Wishlist!', body=mail_body)
