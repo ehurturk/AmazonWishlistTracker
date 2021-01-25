@@ -38,7 +38,7 @@ response = requests.get(amazon_wishlist_url, headers=headers)
 #print(response.content)
 
 soup = BeautifulSoup(response.content, 'lxml')
-product_prices = [float(price.getText()[1: len(price.getText()) + 1]) for price in soup.select('span.a-offscreen')]  # this doesn't get every item in wishlist!
+product_prices = [float(price.getText()[1: len(price.getText()) + 1]) for price in soup.select('span.a-offscreen')]  
 product_titles = [name_title.get('alt') for name_title in soup.select('div.a-text-center.g-itemImage img')]
 
 
